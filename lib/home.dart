@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:movieapp/utils/text.dart';
+import 'package:movieapp/widgets/trending.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 
 class Home extends StatefulWidget {
@@ -42,7 +44,13 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Movie App'),
+        backgroundColor: Colors.transparent,
+        title: ModifiedText(text:'Flutter Movie App',color : Colors.white, size: 18)
+      ),
+      body: ListView(
+        children: [
+          TrendingMovies(trending: trendingMovies)
+        ],
       ),
     );
   }
